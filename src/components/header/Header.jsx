@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
-import { navBar } from "../../../assets/data/data"
-import logo from "../../../assets/images/logo.png"
-import profile from "../../../assets/images/b4.jpg"
+import { navBar } from "../assets/data/data"
+import logo from "../assets/images/logo.png"
+import profile from "../assets/images/b4.jpg"
 import { AiOutlineMenu, AiOutlineSearch } from "react-icons/ai"
 
-const Header = () => {
+export const Header = () => {
   const activeNavLink = ({ isActive }) => (isActive ? "active" : "NavLink")
   const [isMenu, setIsMenu] = useState(false)
-  
 
   return (
     <header className='fixed top-0 left-0 z-50 w-screen h-[8vh] md:shadow-md shadow-sm bg-white'>
@@ -36,7 +35,7 @@ const Header = () => {
         {/* profile  */}
         <div className='profile flex items-center'>
           <AiOutlineSearch size={22} />
-          <button className='bg-primary px-6 py-1.5 text-white rounded-full mx-3 hover:bg-yellow-400 hover:text-black transition-all'>Upload</button>
+          <button className='bg-primary px-6 py-1.5 text-white rounded-full mx-3'>Upload</button>
           <div className='img w-10 h-10 rounded-full'>
             <img src={profile} alt='profile' className='img w-10 h-10 bg-red-300 rounded-full object-cover cursor-pointer' />
           </div>
@@ -71,7 +70,5 @@ const Header = () => {
         </div>
       </div>
     </header>
-  );
-};
-
-export default Header;
+  )
+}
